@@ -39,11 +39,6 @@ function CategoriesScreen(props) {
       style={[styles.container, {backgroundColor: theme.backgroundColor}]}>
       <View
         style={[styles.container, {backgroundColor: theme.backgroundColor}]}>
-        {/* <TouchableOpacity onPress={() => setLocalItem(data)}>
-          <Text style={[{color: '#000'}, {color: theme.textColor}]}>
-            Save file
-          </Text>
-        </TouchableOpacity> */}
         <View
           style={{
             alignItems: 'center',
@@ -52,26 +47,26 @@ function CategoriesScreen(props) {
           }}>
           <TouchableOpacity
             onPress={() => getLocalItem(data)}
-            style={styles.getStyle}>
+            style={[
+              styles.getStyle,
+              {backgroundColor: theme.nav.backgroundColor},
+            ]}>
             <Text style={[{color: '#000'}, {color: theme.textColor}]}>
               Get file
             </Text>
           </TouchableOpacity>
         </View>
-        {/* <View>
+        <View
+          style={{
+            borderBottomWidth: 1,
+            marginBottom: 12,
+            color: '#fff',
+          }}></View>
+        <View>
           <Text style={[{color: '#000'}, {color: theme.textColor}]}>
             {JSON.stringify(data)}
           </Text>
-        </View> */}
-        <FlatList
-          data={data}
-          keyExtractor={({id}, index) => id}
-          renderItem={({item}) => (
-            <View style={{paddingBottom: 10}}>
-              <Text style={{color: theme.textColor}}>{item.id}</Text>
-            </View>
-          )}
-        />
+        </View>
       </View>
     </ScrollView>
   );
